@@ -4,6 +4,7 @@ import markdown from 'metalsmith-markdownit'
 import assets from 'metalsmith-assets'
 import copy from 'metalsmith-copy'
 import collections from 'metalsmith-collections'
+import metadata from 'metalsmith-collection-metadata'
 
 import paths from '../config/paths'
 
@@ -67,6 +68,14 @@ export default new Metalsmith(paths.projectRoot)
     },
     ru: {
       pattern: ['ru/**/*.md']
+    }
+  }))
+  .use(metadata({
+    'collections.en': {
+      lang: 'en'
+    },
+    'collections.ru': {
+      lang: 'ru'
     }
   }))
   .use(markdown({
