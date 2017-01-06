@@ -7,6 +7,7 @@ import collections from 'metalsmith-collections'
 import metadata from 'metalsmith-collection-metadata'
 import mPaths from 'metalsmith-paths'
 import permalinks from 'metalsmith-permalinks'
+import snippet from 'metalsmith-snippet'
 
 import paths from '../config/paths'
 
@@ -89,6 +90,11 @@ export default new Metalsmith(paths.projectRoot)
   }))
   .use(markdown({
     html: true
+  }))
+  .use(snippet({
+    stop: ['<excerpt/>'],
+    stripHtml: false,
+    suffix: ''
   }))
   .use(assets({
     source: './dist/assets',
