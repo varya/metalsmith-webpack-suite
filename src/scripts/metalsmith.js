@@ -141,11 +141,14 @@ export default new Metalsmith(paths.projectRoot)
       assetsBody.push('<script src="http://localhost:35729/livereload.js"></script>')
     }
 
-    const html = files['index.html'].contents.toString()
-      .replace('<!-- assets-head -->', assetsHead.join('\n'))
-      .replace('<!-- assets-body -->', assetsBody.join('\n'))
+    for (let fileName in files) {
+      const file = files[fileName]
+      const html = file.contents.toString()
+        .replace('<!-- assets-head -->', assetsHead.join('\n'))
+        .replace('<!-- assets-body -->', assetsBody.join('\n'))
 
-    files['index.html'].contents = new Buffer(html)
+      file.contents = new Buffer(html)
+    }
 
     done()
   })
