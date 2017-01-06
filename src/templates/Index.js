@@ -9,10 +9,9 @@ export default class Index extends Component {
     const { title, contents, lang } = this.props
     const posts = this.props.metadata.collections[`posts_${lang}`]
 
-    return null;
     return (
       <Page>
-        <div className={style.header}>
+        <div>
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: contents }}/>
           <Posts
