@@ -2,7 +2,8 @@ import Metalsmith from 'metalsmith'
 import watch from 'metalsmith-watch'
 import markdown from 'metalsmith-markdownit'
 import assets from 'metalsmith-assets'
-import copy from "metalsmith-copy"
+import copy from 'metalsmith-copy'
+import collections from 'metalsmith-collections'
 
 import paths from '../config/paths'
 
@@ -39,6 +40,34 @@ export default new Metalsmith(paths.projectRoot)
   .use(devOnly(watch, {
     livereload: true,
     invalidateCache: true
+  }))
+  .use(collections({
+    posts_en: {
+      pattern: ['posts/**/*.md', '!posts/index.md'],
+      sortBy: 'date',
+      reverse: true
+    },
+    posts_ru: {
+      pattern: ['ru/posts/**/*.md', '!ru/posts/index.md'],
+      sortBy: 'date',
+      reverse: true
+    },
+    life_en: {
+      pattern: ['life/**/*.md', '!life/index.md'],
+      sortBy: 'date',
+      reverse: true
+    },
+    life_ru: {
+      pattern: ['ru/life/**/*.md', '!ru/life/index.md'],
+      sortBy: 'date',
+      reverse: true
+    },
+    en: {
+      pattern: ['**/*.md', '!ru/**/*.md']
+    },
+    ru: {
+      pattern: ['ru/**/*.md']
+    }
   }))
   .use(markdown({
     html: true
