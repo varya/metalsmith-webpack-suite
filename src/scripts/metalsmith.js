@@ -5,6 +5,8 @@ import assets from 'metalsmith-assets'
 import copy from 'metalsmith-copy'
 import collections from 'metalsmith-collections'
 import metadata from 'metalsmith-collection-metadata'
+import mPaths from 'metalsmith-paths'
+import permalinks from 'metalsmith-permalinks'
 
 import paths from '../config/paths'
 
@@ -77,6 +79,13 @@ export default new Metalsmith(paths.projectRoot)
     'collections.ru': {
       lang: 'ru'
     }
+  }))
+  .use(permalinks({
+    pattern: ':title',
+    relative: false
+  }))
+  .use(mPaths({
+    property: "paths"
   }))
   .use(markdown({
     html: true
