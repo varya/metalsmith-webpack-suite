@@ -2,6 +2,7 @@ import Metalsmith from 'metalsmith'
 import watch from 'metalsmith-watch'
 import markdown from 'metalsmith-markdownit'
 import assets from 'metalsmith-assets'
+import copy from "metalsmith-copy"
 
 import paths from '../config/paths'
 
@@ -18,6 +19,23 @@ export default new Metalsmith(paths.projectRoot)
   .clean(__PROD__)
   .source(paths.metalsmithSource)
   .destination(paths.metalsmithDestination)
+  .use(copy({
+    pattern: '**/*.md',
+    move: true,
+    transform: f => {
+      if (f.match(/index_en.md/i)) {
+        return f.replace('_en.md', '.md');
+      }
+      if (f.match(/^.*_en.md/i)) {
+        return 'en/' + f.replace('_en.md', '.md');
+      }
+      if (f.match(/^.*_ru.md/i)) {
+        return 'ru/' + f.replace('_ru.md', '.md');
+      }
+      //console.log('returned', f);
+    }
+
+  }))
   .use(devOnly(watch, {
     livereload: true,
     invalidateCache: true
@@ -61,11 +79,11 @@ export default new Metalsmith(paths.projectRoot)
       assetsBody.push('<script src="http://localhost:35729/livereload.js"></script>')
     }
 
-    const html = files['index.html'].contents.toString()
+    /*const html = files['index.html'].contents.toString()
       .replace('<!-- assets-head -->', assetsHead.join('\n'))
       .replace('<!-- assets-body -->', assetsBody.join('\n'))
 
-    files['index.html'].contents = new Buffer(html)
+    files['index.html'].contents = new Buffer(html)*/
 
     done()
   })
