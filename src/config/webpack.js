@@ -14,7 +14,8 @@ const config = {
   entry: {
     head: join(paths.webpackSource, 'js', 'head.js'),
     page: join(paths.webpackSource, 'js', 'page.js'),
-    styles: join(paths.webpackSource, 'css', 'page.css')
+    styles: join(paths.webpackSource, 'css', 'page.css'),
+    index: join(paths.projectRoot, 'src', 'templates', 'Index.js')
   },
   devtool: __DEV__ ? '#cheap-module-eval-source-map' : false,
   output: {
@@ -26,13 +27,17 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+          babelrc: false,
+          presets: ['es2015-node6', 'react', 'stage-0'],
+        }
       },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader'
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
         })
       }
     ]
