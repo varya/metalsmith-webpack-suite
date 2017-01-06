@@ -8,6 +8,7 @@ import metadata from 'metalsmith-collection-metadata'
 import mPaths from 'metalsmith-paths'
 import permalinks from 'metalsmith-permalinks'
 import snippet from 'metalsmith-snippet'
+import reactTemplates from 'metalsmith-react-templates'
 
 import paths from '../config/paths'
 
@@ -95,6 +96,14 @@ export default new Metalsmith(paths.projectRoot)
     stop: ['<excerpt/>'],
     stripHtml: false,
     suffix: ''
+  }))
+  .use(reactTemplates({
+    babel: true,
+    directory: 'src/templates',
+    baseFile: 'base.html',
+    defaultTemplate: 'Default.js',
+    extension: null,
+    static: true
   }))
   .use(assets({
     source: './dist/assets',
