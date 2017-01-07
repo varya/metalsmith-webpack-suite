@@ -67,6 +67,14 @@ export default new Metalsmith(paths.projectRoot)
       sortBy: 'date',
       reverse: true
     },
+    pages_en: {
+      pattern: ['*.md', '*/*.md', '!ru/**/*.md'],
+      sortBy: 'order',
+    },
+    pages_ru: {
+      pattern: ['ru/*.md', 'ru/*/*.md'],
+      sortBy: 'order',
+    },
     en: {
       pattern: ['**/*.md', '!ru/**/*.md']
     },
@@ -76,10 +84,12 @@ export default new Metalsmith(paths.projectRoot)
   }))
   .use(metadata({
     'collections.en': {
-      lang: 'en'
+      lang: 'en',
+      texts: require('../config/texts')('en')
     },
     'collections.ru': {
-      lang: 'ru'
+      lang: 'ru',
+      texts: require('../config/texts')('ru')
     }
   }))
   .use(permalinks({

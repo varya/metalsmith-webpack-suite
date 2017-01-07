@@ -10,7 +10,7 @@ export default class Index extends Component {
     const posts = this.props.metadata.collections[`posts_${lang}`]
 
     return (
-      <Page>
+      <Page {...this.props}>
         <div>
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: contents }}/>

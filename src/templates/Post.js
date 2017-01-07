@@ -9,12 +9,10 @@ export default class Post extends Component {
     const { title, contents } = this.props
 
     return (
-      <Page>
         <div>
           <h1>{title}</h1>
           {contents}
         </div>
-      </Page>
     )
 
   }

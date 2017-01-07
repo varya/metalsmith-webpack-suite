@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Sidebar from '../Sidebar'
+
 import style from './style.css'
 
 export default class Layout extends Component {
@@ -10,6 +12,7 @@ export default class Layout extends Component {
         <section className={style.main}>
           { this.props.children }
         </section>
+        <Sidebar {...this.props}/>
       </div>
     )
 
