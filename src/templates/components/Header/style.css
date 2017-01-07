@@ -99,6 +99,8 @@ Styleguide 2.1
 
 .right
 {
+    padding: 0;
+    margin: 0;
     width: 325px;
     padding-left: 20px;
     display: table-cell;
