@@ -13,6 +13,7 @@ export default class LifePosts extends Component {
 
     return (
       <Posts
+        { ...this.props }
         title={title}
         posts={posts}
         snippets={true}

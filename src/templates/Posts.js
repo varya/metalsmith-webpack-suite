@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 
+import Page from './components/Page'
+
 export default class Posts extends Component {
 
   render() {
+
     const { title, posts, snippets } = this.props
 
     let postsList = posts.map((post, i) => {
@@ -22,10 +25,12 @@ export default class Posts extends Component {
     )
 
     return (
+      <Page {...this.props}>
       <div>
         <h1>{title}</h1>
         {postsList}
       </div>
+      </Page>
     )
 
   }

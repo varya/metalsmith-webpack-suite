@@ -15,9 +15,6 @@ export default class Index extends Component {
         <Article title={title}>
           <div dangerouslySetInnerHTML={{ __html: contents }}/>
         </Article>
-        <Posts
-          posts={posts}
-          />
       </Page>
     )
 
