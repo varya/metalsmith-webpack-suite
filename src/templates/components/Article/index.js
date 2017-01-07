@@ -5,12 +5,22 @@ import style from './style.css'
 export default class Article extends Component {
 
   render() {
-    const { title, share } = this.props
+    const { title, link } = this.props
+
+    const header = link ? (
+      <h2 className={style.header}>
+        <a href={link} className={style.link}>
+          {title}
+        </a>
+      </h2>
+    ) : (
+      <h1 className={style.header}>{title}</h1>
+    )
 
     return (
       <div className={style.article} role="main">
         <div className={style.body}>
-          <h1 className={style.header}>{title}</h1>
+          {header}
         </div>
         <div className={style.text}>
           {this.props.children}
