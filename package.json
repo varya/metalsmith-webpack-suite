@@ -70,6 +70,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "v2.0.0-beta.4",
+    "file-loader": "^0.9.0",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collection-metadata": "^0.1.0",
