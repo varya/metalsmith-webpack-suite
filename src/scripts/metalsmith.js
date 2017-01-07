@@ -29,7 +29,7 @@ export default new Metalsmith(paths.projectRoot)
     pattern: '**/*.md',
     move: true,
     transform: f => {
-      if (f.match(/index_en.md/i)) {
+      if (f.match(/^index_en.md/i)) {
         return f.replace('_en.md', '.md');
       }
       if (f.match(/^.*_en.md/i)) {
@@ -48,35 +48,35 @@ export default new Metalsmith(paths.projectRoot)
   }))
   .use(collections({
     posts_en: {
-      pattern: ['posts/**/*.md', '!posts/index.md'],
+      pattern: ['en/posts/*/*.md', '!en/posts/index.md'],
       sortBy: 'date',
       reverse: true
     },
     posts_ru: {
-      pattern: ['ru/posts/**/*.md', '!ru/posts/index.md'],
+      pattern: ['ru/posts/*/*.md', '!ru/posts/index.md'],
       sortBy: 'date',
       reverse: true
     },
     life_en: {
-      pattern: ['life/**/*.md', '!life/index.md'],
+      pattern: ['en/life/*/*.md', '!en/life/index.md'],
       sortBy: 'date',
       reverse: true
     },
     life_ru: {
-      pattern: ['ru/life/**/*.md', '!ru/life/index.md'],
+      pattern: ['ru/life/*/*.md', '!ru/life/index.md'],
       sortBy: 'date',
       reverse: true
     },
     pages_en: {
-      pattern: ['*.md', '*/*.md', '!ru/**/*.md'],
+      pattern: ['en/*/*.md', 'index.md'],
       sortBy: 'order',
     },
     pages_ru: {
-      pattern: ['ru/*.md', 'ru/*/*.md'],
+      pattern: ['ru/index.md', 'ru/*/*.md'],
       sortBy: 'order',
     },
     en: {
-      pattern: ['**/*.md', '!ru/**/*.md']
+      pattern: ['en/**/*.md', 'index.md']
     },
     ru: {
       pattern: ['ru/**/*.md']
@@ -97,11 +97,11 @@ export default new Metalsmith(paths.projectRoot)
     'collections.posts_ru': {
       rtemplate: 'Post.js'
     },
-    'collections.pages_en': {
-      rtemplate: 'Page.js'
+    'collections.life_en': {
+      rtemplate: 'Post.js'
     },
-    'collections.pages_ru': {
-      rtemplate: 'Page.js'
+    'collections.life_ru': {
+      rtemplate: 'Post.js'
     }
   }))
   .use(permalinks({
