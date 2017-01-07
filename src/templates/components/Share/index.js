@@ -15,7 +15,7 @@ export default class Share extends Component {
 
     return (
       <div className={style.share}>
-        <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+        <script type="text/javascript" src="//yandex.st/share/share.js" charSet="utf-8"></script>
         <span
           className="yashare-auto-init"
           data-yashareQuickServices={shareParams}
