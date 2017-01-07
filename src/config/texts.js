@@ -10,6 +10,10 @@ const texts = {
   recentPostsTitle: {
     en: 'Recently in the blog',
     ru: 'Недавние заметки'
+  },
+  githubTitle: {
+    en: 'Last updated repos',
+    ru: 'Репозитории'
   }
 }
 
