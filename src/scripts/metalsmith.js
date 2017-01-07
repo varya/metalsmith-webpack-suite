@@ -96,6 +96,12 @@ export default new Metalsmith(paths.projectRoot)
     },
     'collections.posts_ru': {
       rtemplate: 'Post.js'
+    },
+    'collections.pages_en': {
+      rtemplate: 'Page.js'
+    },
+    'collections.pages_ru': {
+      rtemplate: 'Page.js'
     }
   }))
   .use(permalinks({
