@@ -13,7 +13,7 @@ export default class Index extends Component {
     return (
       <Page {...this.props}>
         <Article title={title}>
-          {contents}
+          <div dangerouslySetInnerHTML={{ __html: contents }}/>
         </Article>
         <Posts
           posts={posts}
