@@ -10,7 +10,7 @@ export default class Prompt extends Component {
         <ul className={style.socialIco}>
           <li className={style.item}>
             <ul className={style.feeds}>
-              <li classiName={style.item}>
+              <li className={style.item}>
                 <a className={style.rssText} href="/en/feed.xml" title="New on Varya.me in English">en</a>
               </li>
               <li className={style.item}>
