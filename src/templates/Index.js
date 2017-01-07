@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Posts from './Posts'
 import Page from './components/Page'
+import Article from './components/Article'
 
 export default class Index extends Component {
 
@@ -11,13 +12,12 @@ export default class Index extends Component {
 
     return (
       <Page {...this.props}>
-        <div>
-          <h1>{title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: contents }}/>
-          <Posts
-            posts={posts}
-            />
-        </div>
+        <Article title={title}>
+          {contents}
+        </Article>
+        <Posts
+          posts={posts}
+          />
       </Page>
     )
 
