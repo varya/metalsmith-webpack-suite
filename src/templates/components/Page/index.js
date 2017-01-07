@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from '../Header'
+import Layout from '../Layout'
 
 import style from './style.css'
 
@@ -10,7 +11,9 @@ export default class Page extends Component {
     return (
       <div>
         <Header/>
-        { this.props.children }
+        <Layout>
+          { this.props.children }
+        </Layout>
       </div>
     )
 
