@@ -15,7 +15,7 @@ Styleguide 1.6
     float: right;
 }
 
-.b-share-btn__wrap
+:global(.b-share-btn__wrap)
 {
     display: block;
 }

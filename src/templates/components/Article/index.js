@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import Share from '../Share'
-
 import style from './style.css'
 
 export default class Article extends Component {
@@ -15,10 +13,25 @@ export default class Article extends Component {
           <h1 className={style.header}>{title}</h1>
         </div>
         <div className={style.text}>
-          { share && <Share {...this.props}/> }
-          <div dangerouslySetInnerHTML={{ __html: this.props.children }}/>
+          {this.props.children}
         </div>
       </div>
+    )
+
+  }
+
+}
+
+export class ArticleDetails extends Component {
+
+  render() {
+
+    const blockClass = style.details + ' author vcard'
+
+    return (
+      <span className={blockClass}>
+        {this.props.children}
+      </span>
     )
 
   }

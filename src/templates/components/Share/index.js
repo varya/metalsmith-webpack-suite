@@ -8,18 +8,16 @@ export default class Share extends Component {
 
     const { lang } = this.props
 
-    const blockClass = style.share + ' yashare-auto-init'
-
     let shareParams = 'twitter,facebook,gplus'
     if ( lang === 'ru' ) {
       shareParams += ',vkontakte'
     }
 
     return (
-      <div>
+      <div className={style.share}>
         <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
-        <div
-          className={blockClass}
+        <span
+          className="yashare-auto-init"
           data-yashareQuickServices={shareParams}
           data-yashareL10n={lang}
           data-yashareTheme="counter"

@@ -2,6 +2,10 @@ const texts = {
   'menuTitle': {
     en: 'On this site',
     ru: 'На этом сайте'
+  },
+  publishedOn: {
+    en: 'Published on',
+    ru: 'Опубликовано'
   }
 }
 
