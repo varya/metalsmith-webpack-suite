@@ -90,6 +90,12 @@ export default new Metalsmith(paths.projectRoot)
     'collections.ru': {
       lang: 'ru',
       texts: require('../config/texts')('ru')
+    },
+    'collections.posts_en': {
+      rtemplate: 'Post.js'
+    },
+    'collections.posts_ru': {
+      rtemplate: 'Post.js'
     }
   }))
   .use(permalinks({
