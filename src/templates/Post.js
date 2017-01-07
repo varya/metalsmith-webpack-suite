@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Page from './components/Page'
+import Article from './components/Article'
 
 export default class Post extends Component {
 
@@ -10,10 +11,9 @@ export default class Post extends Component {
 
     return (
       <Page {...this.props}>
-        <div>
-          <h1>{title}</h1>
+        <Article {...this.props} title={title} share={true}>
           {contents}
-        </div>
+        </Article>
       </Page>
     )
 
