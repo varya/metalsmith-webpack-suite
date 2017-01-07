@@ -3,11 +3,12 @@ import React, { Component } from 'react'
 import Posts from './Posts'
 import Page from './components/Page'
 import Article from './components/Article'
+import RecentPosts from './components/RecentPosts'
 
 export default class Index extends Component {
 
   render() {
-    const { title, contents, lang } = this.props
+    const { title, contents, lang, texts } = this.props
     const posts = this.props.metadata.collections[`posts_${lang}`]
 
     return (
@@ -15,6 +16,7 @@ export default class Index extends Component {
         <Article title={title}>
           <div dangerouslySetInnerHTML={{ __html: contents }}/>
         </Article>
+        <RecentPosts posts={posts} title={texts.recentPostsTitle}/>
       </Page>
     )
 

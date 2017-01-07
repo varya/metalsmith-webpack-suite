@@ -6,6 +6,10 @@ const texts = {
   publishedOn: {
     en: 'Published on',
     ru: 'Опубликовано'
+  },
+  recentPostsTitle: {
+    en: 'Recently in the blog',
+    ru: 'Недавние заметки'
   }
 }
 
