@@ -25,7 +25,6 @@ export default class Posts extends Component {
     return (
       <Page {...this.props}>
       <div>
-        <h1>{title}</h1>
         {postsList}
       </div>
       </Page>
