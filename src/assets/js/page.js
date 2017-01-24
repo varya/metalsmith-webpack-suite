@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Candies from '../components/Candies'
 import GitHub from '../components/GitHub'
+import Front from '../components/Font'
 
 import getTexts from '../../config/texts'
 

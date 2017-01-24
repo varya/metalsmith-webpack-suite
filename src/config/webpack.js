@@ -4,6 +4,7 @@ import Webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import AssetsPlugin from 'assets-webpack-plugin'
 import WriteFilePlugin from 'write-file-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 import paths from './paths'
 
@@ -62,7 +63,13 @@ const config = {
     }),
     new Webpack.LoaderOptionsPlugin({
       debug: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: join(paths.projectRoot, 'src', 'data', 'font.css'),
+        to: paths.webpackDestination
+      }
+    ])
   ]
 }
 
