@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Page from './components/Page'
 import Article, { ArticleDetails } from './components/Article'
 import Share from './components/Share'
+import Comments from './components/Comments'
 
 
 export default class Post extends Component {
@@ -20,6 +21,7 @@ export default class Post extends Component {
           <ArticleDetails>{texts.publishedOn} {published}</ArticleDetails>
           <div dangerouslySetInnerHTML={{ __html: contents }}/>
         </Article>
+        <Comments {...this.props}/>
       </Page>
     )
 
