@@ -68,6 +68,10 @@ const config = {
       {
         from: join(paths.projectRoot, 'src', 'data', 'font.css'),
         to: paths.webpackDestination
+      },
+      {
+        from: join(paths.projectRoot, 'src', 'assets',  'favicon.ico'),
+        to: paths.webpackDestination
       }
     ])
   ]
