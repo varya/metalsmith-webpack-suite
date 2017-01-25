@@ -19,7 +19,7 @@
     "version": "npm run build && git add -f dist",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "deploy": "gh-pages-deploy"
+    "deploy": "git-directory-deploy --directory ./dist/site --repo varya"
   },
   "repository": {
     "url": "https://github.com/axe312ger/metalsmith-webpack-suite.git",
@@ -74,6 +74,7 @@
     "extract-text-webpack-plugin": "v2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "gh-pages-deploy": "^0.4.2",
+    "git-directory-deploy": "^1.5.1",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collection-metadata": "^0.1.0",
