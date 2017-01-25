@@ -1,0 +1,102 @@
+<!doctype html>
+<html class='no-js' lang=ru>
+    <head>
+        <title>Isomorphic Example</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+        <script src="/assets/loader-26764a82cdd944e48447.js"></script>
+<link rel="stylesheet" href="/assets/page-26764a82cdd944e48447.css"/>
+<script src="/assets/head-26764a82cdd944e48447.js"></script>
+        <script>
+            (function(d, s, l, r) {
+            if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+                r = [
+                    '<style>',
+                    l.getItem('varya.me.fonts'),
+                    '</style>'
+                ];
+                document.write(r.join(''));
+            }
+
+            })(document, Storage, localStorage);
+        </script>
+    </head>
+    <body class="page">
+        <div id='contents'><div><header class="style__header___7cFNF"><div class="style__left___1nLlV" id="Header-Left"></div><div class="style__center___265v6"><logo class="style__logo___2yXgh">⋅⋅⋅<b class="style__var___11qBW">var</b>⋅<b class="style__ya___8D8Xm">ya</b>;<b class="style__cursor___2aaLd"></b></logo></div><div class="style__right___1RRr2" id="Header-Right"></div></header><div class="style__layout___2Ynks"><section class="style__main___1PTuI"><ul class="style__switcher___2YMLp"><li class="style__lang___kggY_"><a href="/" class="style__link___1ZFL2">en</a></li><li class="style__lang___kggY_"><a href="/ru/" class="style__link___1ZFL2">ru</a></li></ul><div class="style__article___2FW-a" role="main"><div class="style__body___XvMI0"><h1 class="style__header___ADINy">Запускать вовремя (о приложениях на Mac)</h1></div><div class="style__text___1aEP8"><div class="style__share___2UNWm"><script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script><span class="yashare-auto-init" data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareL10n="ru" data-yashareTheme="counter"></span></div><span class="style__details___ZaSIa author vcard">Опубликовано 9/10/2014</span><div><p>Я использую один и тот же ноутбук и для работы, и для личных дел. Это удобно, но за соблюдением баланса «работа-жизнь»
+приходится следить дополнительно. Я поступаю просто: уходя с работы, закрываю все приложения. Главное не забывать их
+открывать следующим утром. Но этот процесс можно автоматизировать :-)
+<excerpt/>
+Особенно важно держать открытыми приложения, от которых зависит работа других членов команды. Например, с началом
+рабочего дня должен быть запущен джаббер (или другой используемый мессенджер).</p>
+<p>В AppGyver для общения всех со всеми
+используют <a href="https://www.flowdock.com">Flowdock</a>. Вот мне и понадобилось гарантированно иметь его открытым с утра.</p>
+<p>Оказалось, что на Mac запуск приложения в определенное время можно сделать штатными средствами — при помощи приложения
+Calendar. Вот как:</p>
+<p>###Создайте в Календаре новое событие</p>
+<p>Я назвала своё «Run Flowdock». Время события не обязательно устанавливать с учетом того, чтобы компьютер был уже открыт.
+Можно и удобно запускать всё заранее. У моего события стоит <code>9:35</code>.</p>
+<h3>Сделайте событие повторяющимся</h3>
+<p>Событие должно повторяться каждую неделю по рабочим дням.</p>
+<h3>Запускайте приложение</h3>
+<p>А теперь самое интересное. Приложение можно запускать как кастомное уведомление о событии.<br/><br/>
+В выпадушке <code>alert</code> нужно выбрать самый последний пункт — <code>Custom</code>.<br/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4802/14441195.32/0_88921_7d53950e_L.png" width="300" height="500" border="0"
+title="" alt=""/></p>
+<p>В появившемся диалоге вместо <code>Message</code> нужно выбрать <code>Open file</code></p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4813/14441195.32/0_88925_47986a79_M.png" width="300" height="167" border="0"
+title="" alt=""/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/5109/14441195.32/0_88924_ea39983e_M.png" width="300" height="162" border="0"
+title="" alt=""/></p>
+<p>Под файлом здесь понимается приложение. По умолчанию это <code>Calendar</code>, но можно выбрать и другое.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4810/14441195.32/0_88922_22d155c7_M.png" width="300" height="193" border="0"
+title="" alt=""/></p>
+<p>Затем в диалоговом окне Finder выбрать нужное приложение из папки <code>Applications</code>. В моём случае это Flowdock.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4809/14441195.32/0_88923_7597bf28_M.png" width="300" height="196" border="0"
+title="" alt=""/></p>
+<p>Затем корректируем время. За 5 минут до 9:35 — как раз будет полдесятого. Напоминаю, это вовсе не означает, что к этому
+времени нужно сидеть на работе с открытым ноутбуком. Можно ехать в автобусе или вообще спать. Приложение запустится
+тогда, когда вы откроете крышку.</p>
+<h3>Минусы</h3>
+<p>Не без минусов. Этот же календарь на iPhone в 9:30 пиликает уведомлением о событии. Файл на телефоне он открыть не
+может, поэтому просто радостно сообщает, что вот оно событие наступает.</p>
+</div></div></div><div class="style__comments___3emEu"><div><div id="disqus_thread"></div><script>
+    (function(){
+        window.disqus_shortname = 'varya';
+        window.disqus_developer = '1';
+        window.disqus_url = 'http://varya.me//ru/posts/run-app-in-time-on-mac';
+        window.disqus_identifier = 'posts-run-app-in-time-on-mac-index-ru';
+        window.disqus_title = 'Запускать вовремя (о приложениях на Mac)';
+        if ( window.DISQUS ) {
+            return DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = window.disqus_identifier;
+                    this.page.url = window.disqus_url;
+                    this.page.title = window.disqus_title;
+                }
+            });
+        }
+        else {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }
+    })();
+</script></div></div></section><nav class="style__sidebar___2nkwz"><ul class="style__menu___-uZzl"><h3 class="style__title___3mAfQ">На этом сайте</h3><li class="style__item___2LuN-"><a href="/ru/posts/" class="style__link___1ZFL2">Тех блог</a></li><li class="style__item___2LuN-"><a href="/ru/content/" class="style__link___1ZFL2">Статьи и презентации</a></li><li class="style__item___2LuN-"><a href="/ru/" class="style__link___1ZFL2">Обо мне</a></li><li class="style__item___2LuN-"><a href="/ru/life/" class="style__link___1ZFL2">Про жизнь</a></li></ul><div id="GitHub"></div></nav><aside class="style__prompt___1WAf7"><ul class="style__socialIco___14rtL"><li class="style__item___24Oaa"><ul class="style__feeds___lx7IA"><li class="style__item___24Oaa"><a class="style__rssText___1S0Bk" href="/en/feed.xml" title="New on Varya.me in English">en</a></li><li class="style__item___24Oaa"><a class="style__rssText___1S0Bk" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a></li></ul><a class="style__rss___2lUOQ style__ico___1PWaR" href="/feed.xml" title="New on Varya.me"></a></li><li class="style__item___24Oaa"><a class="style__twitter___3GPQl style__ico___1PWaR" href="https://twitter.com/varya_en" title="@varya_en" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__github___2GmrH style__ico___1PWaR" href="https://github.com/varya" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__facebook___2SOVV style__ico___1PWaR" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__linkedin___2NaTD style__ico___1PWaR" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a></li></ul></aside></div></div></div>
+
+        <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+        <script src="/assets/page-26764a82cdd944e48447.js"></script>
+<script src="/assets/index-26764a82cdd944e48447.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
+    </body>
+</html>
+

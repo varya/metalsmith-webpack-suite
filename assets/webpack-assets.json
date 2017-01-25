@@ -1,0 +1,20 @@
+{
+  "page": {
+    "js": "/assets/page-26764a82cdd944e48447.js",
+    "css": "/assets/page-26764a82cdd944e48447.css"
+  },
+  "styles": {
+    "js": "/assets/styles-26764a82cdd944e48447.js",
+    "css": "/assets/page-26764a82cdd944e48447.css"
+  },
+  "head": {
+    "js": "/assets/head-26764a82cdd944e48447.js"
+  },
+  "index": {
+    "js": "/assets/index-26764a82cdd944e48447.js",
+    "css": "/assets/page-26764a82cdd944e48447.css"
+  },
+  "loader": {
+    "js": "/assets/loader-26764a82cdd944e48447.js"
+  }
+}

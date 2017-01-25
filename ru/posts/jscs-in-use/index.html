@@ -1,0 +1,174 @@
+<!doctype html>
+<html class='no-js' lang=ru>
+    <head>
+        <title>Isomorphic Example</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+        <script src="/assets/loader-26764a82cdd944e48447.js"></script>
+<link rel="stylesheet" href="/assets/page-26764a82cdd944e48447.css"/>
+<script src="/assets/head-26764a82cdd944e48447.js"></script>
+        <script>
+            (function(d, s, l, r) {
+            if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+                r = [
+                    '<style>',
+                    l.getItem('varya.me.fonts'),
+                    '</style>'
+                ];
+                document.write(r.join(''));
+            }
+
+            })(document, Storage, localStorage);
+        </script>
+    </head>
+    <body class="page">
+        <div id='contents'><div><header class="style__header___7cFNF"><div class="style__left___1nLlV" id="Header-Left"></div><div class="style__center___265v6"><logo class="style__logo___2yXgh">⋅⋅⋅<b class="style__var___11qBW">var</b>⋅<b class="style__ya___8D8Xm">ya</b>;<b class="style__cursor___2aaLd"></b></logo></div><div class="style__right___1RRr2" id="Header-Right"></div></header><div class="style__layout___2Ynks"><section class="style__main___1PTuI"><ul class="style__switcher___2YMLp"><li class="style__lang___kggY_"><a href="/" class="style__link___1ZFL2">en</a></li><li class="style__lang___kggY_"><a href="/ru/" class="style__link___1ZFL2">ru</a></li></ul><div class="style__article___2FW-a" role="main"><div class="style__body___XvMI0"><h1 class="style__header___ADINy">Использование JSCS</h1></div><div class="style__text___1aEP8"><div class="style__share___2UNWm"><script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script><span class="yashare-auto-init" data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareL10n="ru" data-yashareTheme="counter"></span></div><span class="style__details___ZaSIa author vcard">Опубликовано 11/25/2014</span><div><p>Хочу поделиться опытом поддержания единого стиля JavaScript в одном из своих проектов. Недавно мы решили пробовать
+молодой инструмент JSCS, и результат его использования понравился всем членам команды.
+<excerpt/></p>
+<p>Когда я присоединилась к проекту <a href="http://styleguide.sc5.io/">SC5 Styleguide</a>, мне сразу бросилось в глаза отсутствие
+единого стиля для JavaScript кода. Это ещё не было ужасающим, но было ясно, что проект в скором времени будет расти и чем раньше мы начнём
+прилагать усилия к соблюдению единого стиля, тем лучше. Тем более, я уже знала о существовании и особенностях JSCS,
+потому что на одном из моих проектов <a href="http://frontendbabel.info/articles/jscs-javascript-code-style/">публиковался перевод
+статьи о нем</a>. Поэтому мы даже не стояли перед вопросом,
+какой инструмент выбрать.</p>
+<p>Конечно, есть и другие решения. Чаще всего называют JSLint и JSHint. Но давайте я сначала расскажу вам одну историю.</p>
+<p>Оказывается, когда авторы JSHint познакомились с JSCS, он им так понравился, что они предпочли стать его
+контрибьютерами, чем развивать проверку стиля в своём инструменте. А у себя оставили более сложные штуки, не про стиль,
+а про программирование.</p>
+<blockquote class="twitter-tweet" lang="ru"><p>And with that, JSCS now has all the style enforcement rules that are
+being dropped in <a href="https://twitter.com/JSHint">@JSHint</a> 3.0: <a
+href="https://t.co/W98EMSiTN5">https://t.co/W98EMSiTN5</a> cc <a
+href="https://twitter.com/valueof">@valueof</a></p>&mdash; Mike Sherov (@mikesherov) <a
+href="https://twitter.com/mikesherov/status/419596672520318976">4 января 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Получается, выбор стоит не между JSLint, JSHint и JSCS, а между JSLint и комбинацией JSHint + JSCS.</p>
+<pre><code class="language-js">gulp.task('jslint',
+  [ 'jshint', 'jscs' ]
+  );
+</code></pre>
+<p>А учитывая, что инструмент новый, со стройной архитектурой, контрибьютить в него будет одно удовольствие да и меньше
+шансов на слишком долгую жизнь багов из-за какого-нибудь непроходимого легаси.</p>
+<p>Вдохновляет также и тот факт, что JSCS уже выбрали такие уважаемые команды как разработчики jQuery, Bootsrap и
+AngularJS.</p>
+<p>Итак, JSCS — это npm-пакет, и установить его можно как глобально на свою машину так и локально на конкретный проект:</p>
+<pre><code>npm install jscs
+</code></pre>
+<p>Кроме того, понадобится создать конфигурационный файл <code>.jscsrc</code> и там описать, какого стиля должен придерживаться
+JavaScript на вашем проекте. Этот файл помещается в корень проекта.</p>
+<p>Несмотря на большое количество правил, которые поддерживает JSCS, конфиг вряд ли будет большим, потому что в инструменте
+предусмотрены пресеты. Популярных стилей для JavaScript кода не так много, и если вы выбрали один из них, то нет нужды
+описывать стиль полностью. Достаточно указать, на кого вы хотели бы быть похожим:</p>
+<ul>
+<li>airbnb</li>
+<li>crockford</li>
+<li>google</li>
+<li>jquery</li>
+<li>mdcs</li>
+<li>wikimedia</li>
+<li>yandex</li>
+</ul>
+<p>Даже если у вас есть расхождения с этими стилями, всё равно удобно выбрать максимально похожий пресет, потому что в JSCS
+возможно переопределить правила пресета.</p>
+<p>И, конечно, важно, что инструмент уже достаточно зрелый. А значит, есть все необходимые дружественные пакеты и плагины
+для разных редакторов.</p>
+<h2>Как это было</h2>
+<p>В общем, учитывая все эти факты, мы остановились на JSCS. Начали с того, что написали подходящую нам конфигурацию и тут
+же исключили из списка для проверки все наши файлы. У проекта уже была модульная структура, поэтому это оказалось
+несложным.</p>
+<pre><code>{
+    ...
+
+    &quot;excludeFiles&quot;: [
+      &quot;node_modules/**&quot;,
+      &quot;src/modules/a/**&quot;,
+      &quot;src/modules/b/**&quot;,
+      &quot;src/*.js
+    ]
+}
+</code></pre>
+<p>Мы договорились, что начиная работать с каким-нибудь модулем, кроме реализации фич, мы также будем править стиль и
+вычеркивать исправленные модули из списка непроверяемых файлов. Соблюдая это, мы довольно быстро исправили все файлы и
+обошлись без конфликтов.</p>
+<p>Гораздо важнее оказалось поддержание исправленных файлов в их исправленном состоянии во время будуших правок. Конечно,
+тут нам помогают автоматические проверки. Но возникает вопрос, настолько строги мы должны быть в этих проверках и когда
+именно проверять. Ведь поддержка стиля не должна становиться самоцелью и должна перетягивать на себя весь фокус
+разработки.</p>
+<p>В итоге мы пришли к концепции раздения ответственности. Так, для основного репозитория мы выбрали жесткую политику
+в вопросе соблюдения стиля, а для форков — рекомендательную. Мы настроили Travis так, чтобы он проверял стиль для
+пул-реквестов. Если стиль не соблюден, пул-реквест не может быть влит в основной репозиторий. Таким образом, там вообще
+никогда нет кода с плохим стилем. В то же время для форков всё гораздо мягче. Мы отказались от насильственных pre-push
+хуков с проверкой стиля, но рекомендуем самостоятельную установку pre-commit хука и использование плагинов JSCS для
+редакторов, чтобы узнавать об ошибках в процессе разработки, а не тогда, когда ломается пул-реквест. Все рекомендации
+написаны у нас в разработческой документации, и новые члены команды активно ими пользуются.</p>
+<p>Всем особенно нравится, как реализована поддержка в редакторах. Ведь конфигурация стиля приезжает в репозиторий проекта
+вместе с кодом, и редактор считывает её самостоятельно. А, главное, у разных проектов может быть разный стиль, и для
+перекрестной работы не требуется никакая перенастройка.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/sublime.gif" alt=""></p>
+<p>Ну и, конечно, всегда есть возможность запустить проверку стиля вручную как gulp-таск.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/travis.png" alt=""></p>
+<h2>Предостережения</h2>
+<p>Во время внедрения инструмента мы столкнулись с парочкой неудобств. Думаю, стоит о них упомянуть, тем более, что к ним
+нашлись решения.</p>
+<p>Основное расстройство — ошибка &quot;out of memory&quot; при запуске gulp-таска с проверкой. Оказалось, что недостаточно исключить
+файлы в конфигурации JSCS. Gulp всё равно сначала пытается работать с ними всеми и пока дело доходит до JSCS, память уже
+кончается. В итоге мы пришли к использованию пакета <code>gulp-ignore</code>:</p>
+<pre><code>gulp.task('jscs', function() {
+  return gulp.src([
+    '**/*.js'
+  ])
+  .pipe(gulpIgnore.exclude([
+    'node_modules/**',
+    'demo-output/**'
+  ]))
+  .pipe(jscs());
+})
+</code></pre>
+<p>Это не очень хорошее решение, ведь здесь пришлось перечислить все те исключения, которые уже задекларированы в <code>.jscsrc</code>.
+Но лучшего варианта у нас пока нет.</p>
+<p>И, второй момент: если вы используете watch в разработке, то скорее всего захотите видеть ошибки в терминале, но не
+прерывать исполнение таска. Для этого потребуется <code>gulp-plumber</code>:</p>
+<pre><code>gulp.task('jscs', function() {
+  return gulp.src([
+    '**/*.js'
+  ])
+  ...
+  .pipe(plumber())
+  .pipe(jscs());
+});
+</code></pre>
+<p>Всё, больше никаких проблем или вопросов относительно иструмента у нас не было. Он прекрасно работает и уже сохранил нам
+тысячи человекочасов.</p>
+<h2>А также</h2>
+<p>Возможно, вас также заинтересует <a href="http://habrahabr.ru/post/220229/">рассказ автора JSCS</a> и мои
+<a href="http://varya.me/jscs-talk/">слайды</a> от доклада на эту тему.</p>
+</div></div></div><div class="style__comments___3emEu"><div><div id="disqus_thread"></div><script>
+    (function(){
+        window.disqus_shortname = 'varya';
+        window.disqus_developer = '1';
+        window.disqus_url = 'http://varya.me//ru/posts/jscs-in-use';
+        window.disqus_identifier = 'posts-jscs-in-use-index-ru';
+        window.disqus_title = 'Использование JSCS';
+        if ( window.DISQUS ) {
+            return DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = window.disqus_identifier;
+                    this.page.url = window.disqus_url;
+                    this.page.title = window.disqus_title;
+                }
+            });
+        }
+        else {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }
+    })();
+</script></div></div></section><nav class="style__sidebar___2nkwz"><ul class="style__menu___-uZzl"><h3 class="style__title___3mAfQ">На этом сайте</h3><li class="style__item___2LuN-"><a href="/ru/posts/" class="style__link___1ZFL2">Тех блог</a></li><li class="style__item___2LuN-"><a href="/ru/content/" class="style__link___1ZFL2">Статьи и презентации</a></li><li class="style__item___2LuN-"><a href="/ru/" class="style__link___1ZFL2">Обо мне</a></li><li class="style__item___2LuN-"><a href="/ru/life/" class="style__link___1ZFL2">Про жизнь</a></li></ul><div id="GitHub"></div></nav><aside class="style__prompt___1WAf7"><ul class="style__socialIco___14rtL"><li class="style__item___24Oaa"><ul class="style__feeds___lx7IA"><li class="style__item___24Oaa"><a class="style__rssText___1S0Bk" href="/en/feed.xml" title="New on Varya.me in English">en</a></li><li class="style__item___24Oaa"><a class="style__rssText___1S0Bk" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a></li></ul><a class="style__rss___2lUOQ style__ico___1PWaR" href="/feed.xml" title="New on Varya.me"></a></li><li class="style__item___24Oaa"><a class="style__twitter___3GPQl style__ico___1PWaR" href="https://twitter.com/varya_en" title="@varya_en" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__github___2GmrH style__ico___1PWaR" href="https://github.com/varya" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__facebook___2SOVV style__ico___1PWaR" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a></li><li class="style__item___24Oaa"><a class="style__linkedin___2NaTD style__ico___1PWaR" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a></li></ul></aside></div></div></div>
+
+        <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+        <script src="/assets/page-26764a82cdd944e48447.js"></script>
+<script src="/assets/index-26764a82cdd944e48447.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
+    </body>
+</html>
+
