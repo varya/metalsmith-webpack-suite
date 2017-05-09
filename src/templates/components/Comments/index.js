@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-//import style from './style.css'
-let style = {}
+import style from './style.css'
 
 export default class Comments extends Component {
 

@@ -1,6 +1,7 @@
 .page
 {
     font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+    color: green;
 }
 
 :global(.page)

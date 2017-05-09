@@ -4,14 +4,14 @@ import Header from '../Header'
 import Layout from '../Layout'
 import Footer from '../Footer'
 
-//import style from './style.css'
+import style from './style.css'
 
 export default class Page extends Component {
 
 
   render() {
     return (
-      <div>
+      <div className={style.page}>
         <Header/>
         <Layout {...this.props}>
           { this.props.children }

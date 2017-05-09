@@ -64,7 +64,8 @@ export default new Metalsmith(paths.projectRoot)
     babel: true,
     directory: 'src/templates',
     baseFile: 'base.html',
-    defaultTemplate: 'Default.js',
+    defaultTemplate: 'Index.js',
+    requireIgnoreExt: ['.css'],
     extension: null,
     static: true
   }))

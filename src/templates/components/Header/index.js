@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Logo from '../Logo'
 
 import style from './style.css'
-//let style = {}
 
 export default class Header extends Component {
 
